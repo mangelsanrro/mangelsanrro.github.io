@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Miguel Ángel San Román Calero – Portfolio</title>
+<meta name="description" content="Portfolio de Miguel Ángel San Román Calero, estudiante de DAM con experiencia en sistemas y desarrollo.">
+<meta name="theme-color" content="#EEF1F6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF1F6; --white:#FFFFFF; --ink:#0E1A2B; --ink2:#4A5A72; --line:#CBD3E1;
+  --blue:#2447F5; --yellow:#FFD84D; --night:#0E1A2B;
+  --display:"Bricolage Grotesque","Instrument Sans",system-ui,sans-serif;
+  --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--blue)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
+p{margin:0 0 14px;max-width:62ch}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* Cabecera */
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:20px;padding-bottom:20px}
+.top nav{display:flex;gap:26px;overflow-x:auto;white-space:nowrap}
+.top nav a{color:var(--ink2);text-decoration:none;font-size:16px;font-weight:500;padding:4px 0;border-bottom:2px solid transparent}
+.top nav a:hover{color:var(--ink);border-bottom-color:var(--blue)}
+.lang{display:flex;flex:none}
+.lang button{font:600 13px var(--sans);letter-spacing:.04em;background:transparent;border:1.5px solid var(--ink);color:var(--ink);padding:6px 12px;cursor:pointer}
+.lang button:first-child{border-radius:8px 0 0 8px}
+.lang button:last-child{border-radius:0 8px 8px 0;border-left:0}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+
+/* Hero */
+.heroband{position:relative;background-image:linear-gradient(rgba(14,26,43,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(14,26,43,.06) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent)}
+.heroband .hero{display:grid;grid-template-columns:1.25fr 1fr;gap:72px;align-items:center;padding-top:56px;padding-bottom:96px}
+.hero h1{font:800 clamp(42px,6.4vw,76px)/.96 var(--display);letter-spacing:-.035em;margin:0 0 22px;text-wrap:balance;animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.hero .role{font:600 20px/1.3 var(--display);color:var(--blue);margin:0 0 20px}
+.hero .lead{font-size:20px;line-height:1.55;margin:0 0 30px;max-width:44ch}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:13px 22px;border-radius:10px;text-decoration:none;font-weight:600;font-size:16px;border:1.5px solid var(--ink);color:var(--ink);background:transparent;transition:background .15s,color .15s}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.main{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn.main:hover{background:var(--ink);border-color:var(--ink)}
+.portrait{position:relative;margin-bottom:72px;animation:rise .7s .12s cubic-bezier(.2,.7,.2,1) both}
+.portrait::before{content:"";position:absolute;inset:18px -18px -18px 18px;background:var(--yellow);border-radius:18px}
+.portrait img{position:relative;display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;border-radius:18px;background:var(--line)}
+pre.code{position:absolute;left:-52px;right:36px;bottom:-48px;margin:0;background:var(--night);color:#E6ECF7;border-radius:12px;padding:18px 20px;font:13.5px/1.7 var(--mono);overflow-x:auto;box-shadow:0 22px 40px -20px rgba(14,26,43,.6)}
+.k{color:#8FA8FF} .s{color:#FFD84D} .c{color:#8392AB} .o{color:#7EE0A8}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+/* Secciones */
+.sec{display:grid;grid-template-columns:230px 1fr;gap:40px;padding-top:72px;padding-bottom:72px;border-top:1px solid var(--line)}
+.sec h2{font:700 30px/1.1 var(--display);letter-spacing:-.02em;margin:0;position:sticky;top:24px;align-self:start}
+.sec h2::before{content:"";display:block;width:34px;height:4px;background:var(--blue);margin-bottom:18px}
+
+/* Proyecto */
+.project{background:var(--night);color:#E6ECF7;border-radius:18px;padding:40px}
+.project h3{font:700 clamp(30px,4vw,44px)/1.05 var(--display);letter-spacing:-.025em;margin:0 0 16px;color:#fff}
+.project p{color:#C3CDDF}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0;padding:0;list-style:none}
+.tags li{font:600 14px var(--sans);border:1.5px solid #3A4A66;border-radius:999px;padding:4px 14px;color:#fff}
+.project .note{margin:28px 0 0;padding-top:20px;border-top:1px solid #2A3A56;font-size:16px;color:#9FB0CB}
+
+/* Habilidades */
+.skills{margin:0}
+.skills .row{display:grid;grid-template-columns:200px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.skills .row:first-child{padding-top:0}
+.skills dt{font:600 18px var(--display);color:var(--blue)}
+.skills dd{margin:0;font-size:20px;font-weight:500}
+
+/* Experiencia */
+.timeline{border-left:2px solid var(--line);margin-left:7px}
+.job{position:relative;padding:0 0 44px 34px}
+.job:last-child{padding-bottom:0}
+.job::before{content:"";position:absolute;left:-9px;top:7px;width:16px;height:16px;border-radius:50%;background:var(--paper);border:3px solid var(--blue)}
+.job:first-child::before{background:var(--blue)}
+.job h3{font:700 24px/1.2 var(--display);letter-spacing:-.015em;margin:0}
+.job .meta{color:var(--ink2);font-size:16px;font-weight:500;margin:4px 0 12px}
+.job ul{margin:0;padding-left:20px}
+.job li{margin-bottom:4px}
+.job li::marker{color:var(--blue)}
+
+/* Formación */
+.edu-list .edu{margin:0;max-width:none;padding:18px 0;border-bottom:1px solid var(--line);font-size:19px;font-weight:500}
+.edu-list .edu:first-child{padding-top:0}
+
+/* Contacto */
+.contact-list a{display:block;width:fit-content;max-width:100%;overflow-wrap:anywhere;color:var(--ink);text-decoration-color:var(--blue);text-decoration-thickness:2px;text-underline-offset:6px;margin-bottom:14px}
+.contact-list a:hover{color:var(--blue)}
+.contact-list a.mail{font:700 clamp(26px,4.6vw,52px)/1.1 var(--display);letter-spacing:-.025em;color:var(--blue);margin-bottom:28px}
+.contact-list a.mail:hover{color:var(--ink)}
+.contact-list a:not(.mail){font-size:19px;font-weight:500}
+
+footer{border-top:1px solid var(--line);color:var(--ink2);font-size:15px;padding:28px 0}
+
+@media (max-width:860px){
+  .heroband .hero{grid-template-columns:1fr;gap:56px;padding-top:36px;padding-bottom:72px}
+  .portrait{max-width:440px;margin-bottom:0}
+  pre.code{position:relative;left:auto;right:auto;bottom:auto;margin:-44px 14px 0 14px}
+  .sec{grid-template-columns:1fr;gap:28px;padding-top:56px;padding-bottom:56px}
+  .sec h2{position:static}
+}
+@media (max-width:560px){
+  body{font-size:17px}
+  .top nav{gap:16px}
+  .top nav a{font-size:14.5px}
+  .project{padding:28px 22px}
+  .skills .row{grid-template-columns:1fr;gap:4px}
+  .skills dd{font-size:18px}
+  .job{padding-left:26px}
+  pre.code{font-size:12.5px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;scroll-behavior:auto!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <nav>
+      <a href="#proyectos" data-i18n="nav_projects">Proyectos</a>
+      <a href="#habilidades" data-i18n="nav_skills">Habilidades</a>
+      <a href="#experiencia" data-i18n="nav_exp">Experiencia</a>
+      <a href="#contacto" data-i18n="nav_contact">Contacto</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang="es" aria-pressed="true">ES</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="heroband">
+    <div class="wrap hero">
+      <div>
+        <h1>Miguel Ángel<br>San Román Calero</h1>
+        <p class="role" data-i18n="role">Estudiante de DAM · Sistemas y desarrollo</p>
+        <p class="lead" data-i18n="lead">Estudio Desarrollo de Aplicaciones Multiplataforma y trabajo como administrador de redes y sistemas. Busco unas prácticas en desarrollo de software.</p>
+        <div class="btns">
+          <a class="btn main" href="CV-Miguel-San-Roman.pdf" download data-i18n="cv">Descargar CV</a>
+          <a class="btn" href="https://github.com/mangelsanrro">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/miguelangelsanromancalero/">LinkedIn</a>
+        </div>
+      </div>
+      <div class="portrait">
+        <img src="./foto.png" alt="Miguel Ángel San Román Calero">
+        <pre class="code" id="snippet" aria-label="Resumen en forma de código"></pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyectos">
+    <div class="wrap sec">
+      <h2 data-i18n="h_projects">Proyectos</h2>
+      <article class="project">
+        <h3>Ticket System</h3>
+        <p data-i18n="p_ticket">Aplicación web para gestionar incidencias (tickets), con backend en Node.js y frontend en React. La desarrollé con ayuda de herramientas de IA, revisando y adaptando el código para entender cómo funciona cada parte.</p>
+        <ul class="tags"><li>Node.js</li><li>React</li><li>JavaScript</li></ul>
+        <p class="note" data-i18n="note_private">Repositorio privado por ahora. Puedo enseñar el código en una entrevista.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="habilidades">
+    <div class="wrap sec">
+      <h2 data-i18n="h_skills">Habilidades</h2>
+      <dl class="skills">
+        <div class="row"><dt data-i18n="sk_lang">Lenguajes</dt><dd>Java, SQL, JavaScript, Python, C#</dd></div>
+        <div class="row"><dt data-i18n="sk_web">Web y backend</dt><dd>HTML/CSS, Node.js, React, ASP.NET Core, REST</dd></div>
+        <div class="row"><dt data-i18n="sk_db">Bases de datos</dt><dd>PostgreSQL, SQLite</dd></div>
+        <div class="row"><dt data-i18n="sk_tools">Herramientas</dt><dd>Git y GitHub, Visual Studio, IntelliJ IDEA, Docker, Figma, Android Studio, Postman</dd></div>
+        <div class="row"><dt data-i18n="sk_sys">Sistemas y redes</dt><dd>Redes, Windows Server, Active Directory, Linux</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <div class="wrap sec">
+      <h2 data-i18n="h_exp">Experiencia</h2>
+      <div class="timeline">
+        <div class="job">
+          <h3 data-i18n="job1_t">Administrador de Redes y Sistemas Informáticos</h3>
+          <p class="meta" data-i18n="job1_m">CSIC, Madrid · nov. 2025 – oct. 2026</p>
+          <ul>
+            <li data-i18n="job1_a">Soporte técnico y HelpDesk a usuarios</li>
+            <li data-i18n="job1_b">Gestión de redes, VPN y escritorios virtuales (VDI)</li>
+            <li data-i18n="job1_c">Documentación de procedimientos y programas</li>
+          </ul>
+        </div>
+        <div class="job">
+          <h3 data-i18n="job2_t">Estudiante en prácticas de informática</h3>
+          <p class="meta" data-i18n="job2_m">CSIC, Madrid · abr. 2025 – jun. 2025</p>
+          <ul>
+            <li data-i18n="job2_a">Gestión de redes y telefonía VoIP</li>
+            <li data-i18n="job2_b">HelpDesk, impresoras y reparación de equipos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="formacion">
+    <div class="wrap sec">
+      <h2 data-i18n="h_edu">Formación</h2>
+      <div class="edu-list">
+        <p class="edu" data-i18n="edu1">Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM), 2025 – 2027</p>
+        <p class="edu" data-i18n="edu2">Grado Medio en Sistemas Microinformáticos y Redes (SMR), 2023 – 2025</p>
+        <p class="edu" data-i18n="edu3">Framework SGAI: Java 8 y 11 sobre Spring</p>
+        <p class="edu" data-i18n="edu4">Inglés B2</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="wrap sec">
+      <h2 data-i18n="h_contact">Contacto</h2>
+      <div class="contact-list">
+        <a class="mail" href="mailto:mangelsanrro@gmail.com">mangelsanrro@gmail.com</a>
+        <a href="https://www.linkedin.com/in/miguelangelsanromancalero/">linkedin.com/in/miguelangelsanromancalero</a>
+        <a href="https://github.com/mangelsanrro">github.com/mangelsanrro</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span data-i18n="foot">Madrid, 2026.</span></div>
+</footer>
+
+<script>
+var T = {
+  es: {
+    nav_projects:"Proyectos", nav_skills:"Habilidades", nav_exp:"Experiencia", nav_contact:"Contacto",
+    role:"Estudiante de DAM · Sistemas y desarrollo",
+    lead:"Estudio Desarrollo de Aplicaciones Multiplataforma y trabajo como administrador de redes y sistemas. Busco unas prácticas en desarrollo de software.",
+    cv:"Descargar CV",
+    h_projects:"Proyectos", h_skills:"Habilidades", h_exp:"Experiencia", h_edu:"Formación", h_contact:"Contacto",
+    p_ticket:"Aplicación web para gestionar incidencias (tickets), con backend en Node.js y frontend en React. La desarrollé con ayuda de herramientas de IA, revisando y adaptando el código para entender cómo funciona cada parte.",
+    note_private:"Repositorio privado por ahora. Puedo enseñar el código en una entrevista.",
+    sk_lang:"Lenguajes", sk_web:"Web y backend", sk_db:"Bases de datos", sk_tools:"Herramientas", sk_sys:"Sistemas y redes",
+    job1_t:"Administrador de Redes y Sistemas Informáticos", job1_m:"CSIC, Madrid · nov. 2025 – oct. 2026",
+    job1_a:"Soporte técnico y HelpDesk a usuarios", job1_b:"Gestión de redes, VPN y escritorios virtuales (VDI)", job1_c:"Documentación de procedimientos y programas",
+    job2_t:"Estudiante en prácticas de informática", job2_m:"CSIC, Madrid · abr. 2025 – jun. 2025",
+    job2_a:"Gestión de redes y telefonía VoIP", job2_b:"HelpDesk, impresoras y reparación de equipos",
+    edu1:"Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM), 2025 – 2027",
+    edu2:"Grado Medio en Sistemas Microinformáticos y Redes (SMR), 2023 – 2025",
+    edu3:"Framework SGAI: Java 8 y 11 sobre Spring", edu4:"Inglés B2",
+    foot:"Madrid, 2026."
+  },
+  en: {
+    nav_projects:"Projects", nav_skills:"Skills", nav_exp:"Experience", nav_contact:"Contact",
+    role:"DAM student · Systems and development",
+    lead:"I'm studying Multiplatform Application Development and working as a network and systems administrator. I'm looking for a software development internship.",
+    cv:"Download CV",
+    h_projects:"Projects", h_skills:"Skills", h_exp:"Experience", h_edu:"Education", h_contact:"Contact",
+    p_ticket:"Web app to manage support tickets, with a Node.js backend and a React frontend. I built it with the help of AI tools, reviewing and adapting the code to understand how each part works.",
+    note_private:"Private repository for now. I can walk through the code in an interview.",
+    sk_lang:"Languages", sk_web:"Web and backend", sk_db:"Databases", sk_tools:"Tools", sk_sys:"Systems and networks",
+    job1_t:"Network and IT Systems Administrator", job1_m:"CSIC, Madrid · Nov 2025 – Oct 2026",
+    job1_a:"Technical support and help desk for users", job1_b:"Network management, VPN and virtual desktops (VDI)", job1_c:"Documentation of procedures and software",
+    job2_t:"IT Intern", job2_m:"CSIC, Madrid · Apr 2025 – Jun 2025",
+    job2_a:"Network management and VoIP telephony", job2_b:"Help desk, printers and hardware repair",
+    edu1:"Higher Vocational Degree in Multiplatform Application Development (DAM), 2025 – 2027",
+    edu2:"Intermediate Vocational Degree in Microcomputer Systems and Networks (SMR), 2023 – 2025",
+    edu3:"SGAI framework: Java 8 and 11 on Spring", edu4:"English B2",
+    foot:"Madrid, 2026."
+  }
+};
+var SNIP = {
+  es: '<span class="c">// quién soy, en pocas líneas</span>\n<span class="k">const</span> miguel = {\n  rol: <span class="s">"Estudiante de DAM"</span>,\n  experiencia: <span class="s">"1 año en sistemas y redes"</span>,\n  stack: [<span class="s">"Java"</span>, <span class="s">"SQL"</span>, <span class="s">"Node.js"</span>],\n  busco: <span class="s">"prácticas en desarrollo"</span>,\n  disponible: <span class="o">true</span>,\n};',
+  en: '<span class="c">// who I am, in a few lines</span>\n<span class="k">const</span> miguel = {\n  role: <span class="s">"DAM student"</span>,\n  experience: <span class="s">"1 year in systems and networks"</span>,\n  stack: [<span class="s">"Java"</span>, <span class="s">"SQL"</span>, <span class="s">"Node.js"</span>],\n  looking_for: <span class="s">"a development internship"</span>,\n  available: <span class="o">true</span>,\n};'
+};
+function setLang(l){
+  document.documentElement.lang = l;
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var v = T[l][el.getAttribute('data-i18n')];
+    if (v) el.textContent = v;
+  });
+  document.getElementById('snippet').innerHTML = SNIP[l];
+  document.querySelectorAll('.lang button').forEach(function(b){
+    b.setAttribute('aria-pressed', b.dataset.lang === l ? 'true' : 'false');
+  });
+  try { localStorage.setItem('lang', l); } catch (e) {}
+}
+document.querySelectorAll('.lang button').forEach(function(b){
+  b.addEventListener('click', function(){ setLang(b.dataset.lang); });
+});
+var start = 'es';
+try {
+  var saved = localStorage.getItem('lang');
+  if (saved === 'es' || saved === 'en') start = saved;
+  else if (navigator.language && navigator.language.slice(0,2) !== 'es') start = 'en';
+} catch (e) {}
+setLang(start);
+</script>
+</body>
+</html>
